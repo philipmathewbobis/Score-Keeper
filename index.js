@@ -13,7 +13,7 @@ let winningScore = 5,updatePlayer1 = 0,updatePlayer2 = 0;
 select.addEventListener('change', function (e) {
     if (parseInt(player1Score.innerText) >= parseInt(select.value) || parseInt(player2Score.innerText) >= parseInt(select.value)){
         alert("You cannot change the points to win.")
-        resetToDefault()
+
         return
     }else {
         winningScore = parseInt(select.value)
@@ -21,6 +21,10 @@ select.addEventListener('change', function (e) {
 })
 
 plusBtn1.addEventListener('click', function (e){
+    if (parseInt(player1Score.innerText) >= parseInt(select.value) || parseInt(player2Score.innerText) >= parseInt(select.value)){
+        alert("You cannot add points directly equal too or greater.")
+        return
+    }
     if (winningScore % 2 === 0) {
         alert("Select a number of playing to points in odd number.")
         return
@@ -31,6 +35,10 @@ plusBtn1.addEventListener('click', function (e){
 })
 
 plusBtn2.addEventListener('click', function (e){
+    if (parseInt(player1Score.innerText) >= parseInt(select.value) || parseInt(player2Score.innerText) >= parseInt(select.value)){
+        alert("You cannot add points directly equal too or greater than the winning points.")
+        return
+    }
     if (winningScore % 2 === 0) {
         alert("Select a number of playing to points in odd number.")
         return
