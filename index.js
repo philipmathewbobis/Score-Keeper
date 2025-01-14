@@ -11,7 +11,13 @@ let winningScore = 5,updatePlayer1 = 0,updatePlayer2 = 0;
 
 
 select.addEventListener('change', function (e) {
-    winningScore = parseInt(select.value)
+    if (parseInt(player1Score.innerText) >= parseInt(select.value)){
+        alert("You cannot change the points to win.")
+        resetToDefault()
+        return
+    }else {
+        winningScore = parseInt(select.value)
+    }
 })
 
 plusBtn1.addEventListener('click', function (e){
@@ -64,7 +70,15 @@ function gameWinner(){
 }
 
 // Reset button event listener
-rstButton.addEventListener('click', function(){
+rstButton.addEventListener('click', resetToDefault)
+
+const theme = document.querySelector('#theme')
+
+theme.addEventListener('click', function(){
+    document.documentElement.classList.toggle('dark')
+})
+
+function resetToDefault(){
     // Reset all from the default values
     updatePlayer1 = 0
     updatePlayer2 = 0
@@ -85,10 +99,4 @@ rstButton.addEventListener('click', function(){
 
     plusBtn1.removeAttribute('disabled')
     plusBtn2.removeAttribute('disabled')
-})
-
-const theme = document.querySelector('#theme')
-
-theme.addEventListener('click', function(){
-    document.documentElement.classList.toggle('dark')
-})
+}
