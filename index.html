@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <title>Title</title>
+</head>
+<body class="dark:bg-gray-800">
+
+    <!-- Background container   -->
+    <div class="flex flex-col items-center space-y-9 p-6">
+        <!--  Theme button  -->
+        <div>
+            <button id="theme" class="py-3 px-6 rounded-xl bg-gray-800 text-white dark:bg-white dark:text-gray-900">Dark</button>
+        </div>
+        <!--  Card container   -->
+        <div class="flex flex-col max-w-sm border shadow-lg">
+            <img class="object-fit" src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3784&q=80" alt="">
+            <div class="py-2 px-3 border-b-2 dark:bg-slate-800 dark:text-white ">
+                <h1 class="text-sm capitalize">ping pong score keeper</h1>
+            </div>
+            <div class="flex flex-col py-6 px-4 space-y-2 dark:bg-gray-700">
+                <!--  Score of players   -->
+                <div class="text-3xl font-semibold tracking-widest dark:text-white">
+                    <span id="player-1">0</span> to <span id="player-2">0</span>
+                </div>
+                <div>
+                    <p class="text-xs text-zinc-600 dark:text-slate-300">Use the buttons below to keep score.</p>
+                </div>
+                <div class="flex space-x-4 items-center">
+                    <label class="capitalize font-semibold dark:text-white" for="selected-points">playing to</label>
+                    <select id="selected-points" class="px-4 py-2 text-sm font-medium border-2 dark:bg-gray-600 dark:text-slate-300">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5" selected>5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Buttons  -->
+            <div class="flex items-stretch">
+                <button id="player-1-btn" class="py-2 px-6 bg-green-600 rounded-md capitalize text-white text-[7px] sm:text-[10px] grow md:text-xs hover:bg-green-700 duration-300">+1 player one</button>
+                <button id="player-2-btn" class="py-2 px-6 bg-blue-600 rounded-md capitalize text-white text-[7px] sm:text-[10px] grow md:text-xs hover:bg-blue-700 duration-300">+1 player two</button>
+                <button id="reset-btn" class="py-2 px-9 bg-red-600 rounded-md capitalize text-white text-[7px] sm:text-[10px] grow md:text-xs hover:bg-red-700 duration-300">reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
