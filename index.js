@@ -11,7 +11,7 @@ let winningScore = 5,updatePlayer1 = 0,updatePlayer2 = 0;
 
 
 select.addEventListener('change', function (e) {
-    if (parseInt(player1Score.innerText) >= parseInt(select.value)){
+    if (parseInt(player1Score.innerText) >= parseInt(select.value) || parseInt(player2Score.innerText) >= parseInt(select.value)){
         alert("You cannot change the points to win.")
         resetToDefault()
         return
